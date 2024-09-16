@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        /* Basic reset */
+body, h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: rebeccapurple;
+    background-color: silver;
+}
+
+header {
+    background-color: cadetblue;
+    color: sienna;
+    padding: 20px 0;
+}
+
+header .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: darkred;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h3 {
+    border-bottom: 2px solid peru;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: peachpuff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.menu-item img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.item-info {
+    padding: 15px;
+    flex: 1;
+}
+
+.item-info h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.item-info p {
+    margin: 10px 0;
+}
+
+.item-info span {
+    font-size: 20px;
+    color: #e94e77;
+}
+
+footer {
+    background-color: cadetblue;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .container {
+    width: 80%;
+    margin: auto;
+}
+
+        </style>
+    <header>
+        <div class="container">
+            <h1>Sparkle </h1>
+            <nav>
+                <div class="logo"> Sparkle.. </div>
+                  
+         <img src="c:\Users\varun\Downloads\download - 2024-09-08T121708.470.jpg" alt="logo">
+                <ul class="nav-links">
+                <a href="#menu">Menu</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                </ul>
+            </nav>
+        </div>
+    
+        <nav>
+           
+            <div class="cta"><a href="#contact">Get Started</a></div>
+        </nav>
+        <div class="hero-section" id="home">
+            <h1>THe Food Paradise...</h1>
+            <p>Efficient solutions to your needs and required food paves the way to the fulfilled breskfasts, lunches and dinners </p>
+            <a href="#services" class="btn">Learn More</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="menu">
+            <div class="container">
+                <h2>Our Menu</h2>
+                <div class="menu-category">
+                    <h3>Starters</h3>
+                    <p>"Dim Sum Delights with a Pasta Twist"<br>
+                        Bite-sized treasures with a touch of Italy.<br>
+                        
+                        "Spring Rolls Meet Bruschetta"<br>
+                        Crispy, crunchy, and bursting with flavor.<br>
+                        
+                        "Sushi-Samosa Fusion"<br>
+                        A delightful collision of Japanese and Indian flavors</p>
+                        <br>
+                    <div class="menu-item">
+                        <img src="c:\Users\varun\Downloads\download - 2024-09-08T121116.133.jpg" alt="Starter 1">
+                        <div class="item-info">
+                            <h4>Bruschetta</h4>
+                            <p>Toasted bread with tomatoes, basil, and olive oil.</p>
+                            <span>$8.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="c:\Users\varun\Downloads\download - 2024-09-08T121158.922.jpg" alt="Starter 2">
+                        <div class="item-info">
+                            <h4>Stuffed Mushrooms</h4>
+                            <p>Mushrooms stuffed with cheese and herbs.</p>
+                            <span>$10.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Main Courses</h3>
+                    <p>"Spaghetti in Soy Sauce: A Match Made in Heaven"<br>
+                        Classic Italian pasta with an Asian-inspired twist.<br>
+                        
+                        "Ramen Carbonara: Noodles Meet Creamy Dream"<br>
+                        A savory blend of rich creaminess and umami.<br>
+                        
+                        "Wok-Tossed Risotto: Italian Comfort with an Asian Flair"<br>
+                        Creamy, comforting, and stir-fried to perfection.</p>
+                        <br>
+                    <div class="menu-item">
+                        <img src="c:\Users\varun\Downloads\download - 2024-09-08T121229.079.jpg" alt="Main Course 1">
+                        <div class="item-info">
+                            <h4>Grilled Salmon</h4>
+                            <p>Salmon fillet grilled to perfection.
+                          </p>
+                            <span>$20.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="c:\Users\varun\Downloads\download - 2024-09-08T121338.124.jpg" alt="Main Course 2">
+                        <div class="item-info">
+                            <h4>Beef Wellington</h4>
+                            <p>Beef tenderloin wrapped in pastry with mushrooms.</p>
+                            <span>$25.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Desserts</h3>
+                    <p>
+                        "Mango Tiramisu: A Tropical Italian Escape"<br>
+                        Creamy mascarpone meets juicy mango in a heavenly dessert.<br>
+
+                        "Matcha Cannoli: A Zen Twist on a Classic"<br>
+                        Crispy, sweet, and filled with vibrant matcha cream.<br>
+
+                         "Fortune Cookie Panna Cotta: Sweet Surprises Await"<br>
+                          Smooth and silky, with a crunchy fortune on the side.
+                    </p>
+                    <br>
+                    <div class="menu-item">
+                        <img src="c:\Users\varun\Downloads\download - 2024-09-08T121456.350.jpg" alt="Dessert 1">
+                        <div class="item-info">
+                            <h4>Chocolate Lava Cake</h4>
+                            <p>Rich chocolate cake with a molten center.</p>
+                            <span>$9.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="c:\Users\varun\Downloads\download - 2024-09-08T121632.930.jpg" alt="Dessert 2">
+                        <div class="item-info">
+                            <h4>Tiramisu</h4>
+                            <p>Classic Italian coffee-flavored dessert.</p>
+                            <span>$8.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <img src="c:\Users\varun\Downloads\download - 2024-09-08T121719.918.jpg" alt="Main Course 1">
+                <p>Welcome to Gourmet Bistro, where we serve delicious and fresh dishes made with love and passion. Our chefs use only the finest ingredients to create mouth-watering meals that will leave you coming back for more.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Email us at: <a href="mailto:varunapriyasj1004@gmail.com">varunapriyasj1004@gmail.com</a></p>
+                <p>Call us: (123) 456-7890</p>
+            </div>
+          
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sparkle. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

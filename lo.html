@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset some default styles */
+body, h1, form, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background:url("download (31).jpg") center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.tab {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px;
+    width: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.tab button.active {
+    background-color: palevioletred;
+    color: #fff;
+}
+
+.form-content {
+    display: none;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: goldenrod;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: green;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="tab">
+                <button class="tablinks" onclick="openForm(event, 'login')">Login</button>
+                <button class="tablinks" onclick="openForm(event, 'signup')">Sign Up</button>
+            </div>
+
+            <div id="login" class="form-content">
+                <h1>Login</h1>
+                <form action="/login" method="post">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" required>
+                    
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <div id="signup" class="form-content" style="display:none;">
+                <h1>Sign Up</h1>
+                <form action="/signup" method="post">
+                    <label for="signup-name">Name</label>
+                    <input type="text" id="signup-name" name="name" required>
+                    
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" required>
+                    
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" required>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openForm(evt, formName) {
+            var i, formContent, tablinks;
+            formContent = document.getElementsByClassName("form-content");
+            for (i = 0; i < formContent.length; i++) {
+                formContent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(formName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced E-Commerce Store</title>
+    <title><?php echo htmlspecialchars($product['name']); ?></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background:url("c:\Users\varun\Downloads\download (48).jpg")center/cover no-repeat;
+        }
+        header {
+            background: teal;
+            color: thistle;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        #search {
+            margin: 20px 0;
+            text-align: center;
+        }
+        #search input {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .product {
+            float: left;
+            width: 30%;
+            margin: 1.5%;
+            box-sizing: border-box;
+            background: silver;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .product h2 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .product p {
+            font-size: 1em;
+            color: #555;
+        }
+        .product .price {
+            font-size: 1.2em;
+            color: red;
+            margin: 10px 0;
+        }
+        .product button {
+            padding: 10px 20px;
+            background: teal;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background: teal;
+        }
+        footer {
+            background:maroon;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            clear: both;
+        }
+        #cart {
+            float: right;
+            padding: 10px;
+            background: wheat;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        #cart h2 {
+            margin: 0 0 10px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .filter {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .filter select {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background:teal;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+    color: rosybrown;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 20px;
+}
+/* Apply styles to the whole page */
+
+
+.background-image {
+    /* Ensure the image covers the whole page */
+    background-image: url('c:\Users\varun\Downloads\download (77).jpg');
+    background-size: cover; /* Scale the background image to cover the element */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    color: purple; /* Text color */
+    text-align: center; /* Center text */
+}
+
+    </style>
+</head>
+<body>
+<header>
+        <div class="container">
+            <h1>Sparkle </h1>
+              
+        </div>
+   
+  
+        <nav>
+            <div class="logo"> your logo </div>
+            <ul class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            </ul>
+        </nav>
+
+    </header>
+    <br>
+    <p>"Cherish Every Milestone with a Sparkling Reminder"<br>
+        "Create Memories with Every Sparkle"<br>
+        "Jewels as Unique as Your Love Story"<br>
+        "Mark Life’s Precious Moments with Radiant Elegance"</p>
+        
+        <br>
+    <div class="container">
+        <div id="search">
+            <input type="text" id="search-bar" placeholder="Search products..." oninput="filterProducts()">
+        </div>
+
+        <div class="filter">
+            <select id="filter" onchange="filterProducts()">
+                <option value="">Filter by Price</option>
+                <option value="20">Up to $20</option>
+                <option value="30">Up to $30</option>
+                <option value="40">Up to $40</option>
+                <option value="50">Up to $50</option>
+                <option value="50">Up to $60</option>
+                <option value="50">Up to $70</option>
+            </select>
+        </div>
+        <div id="cart">
+            <h2>Cart</h2>
+            <ul id="cart-items"></ul>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+        <div id="products">
+            <div class="product" data-price="9.99" data-name="Product 1">
+                <img src="c:\Users\varun\Downloads\download (61).jpg" alt="Product 1">
+                <p>Store the water in bottles to drink it later when we want it to use them</p>
+                <h2>Water Bottles </h2>
+                <br>
+                <div class="gallery">
+                    <img src="c:\Users\varun\Downloads\download (63).jpg" alt="Product 1 Thumbnail 1">
+                    <img src="c:\Users\varun\Downloads\download (62).jpg" alt="Product 1 Thumbnail 2">
+                </div>
+                <p>"Stay Hydrated, Stay Awesome!"<br>
+                    "Fuel for Your Next Adventure"<br>
+                    "Sip, Smile, Repeat"<br>
+                    "Drink Water, Feel Great"</p>
+                <div class="price">$9.99</div>
+                <button onclick="addToCart('Product 1', 9.99)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-price="5.36" data-name="Product 2">
+                <img src="c:\Users\varun\Downloads\download (56).jpg" alt="Product 1">
+                <p>Writing the establishing the career starts with the pen and pencils </p>
+                <h2>Pens </h2>
+                <br>
+                <div class="gallery">
+                    <img src="c:\Users\varun\Downloads\download (2).png" alt="Product 1 Thumbnail 1">
+                    <img src="c:\Users\varun\Downloads\download (58).jpg" alt="Product 1 Thumbnail 2">
+                </div>
+                <p>"Command Attention with Every Signature"<br>
+                    "Elevate Your Professional Presence"<br>
+                    "A Pen that Speaks Success"<br>
+                    "Impress with Every Ink Stroke"</p>
+                <div class="price">$5.36</div>
+                <button onclick="addToCart('Product 1', 5.36)">Add to Cart</button>
+            </div>
+            
+            <div class="product" data-price="39.99" data-name="Product 3">
+                <img src="c:\Users\varun\Downloads\download (34).jpg" alt="Product 3">
+<p>The things that we buy from various shops should be worth for buying and keeping them at our hands and homes.</p>
+
+
+                
+     
+
+
+                <h2>Pantry </h2>
+                <br>
+                <div class="gallery">
+                    <img src="c:\Users\varun\Downloads\download (35).jpg" alt="Product 3 Thumbnail 1">
+                    <img src="c:\Users\varun\Downloads\download (33).jpg" alt="Product 3 Thumbnail 2">
+                </div>
+                <p>The house gets completed when you organise the products in the way in which you like it.
+                    The beauty of the house increases when you plan and buy the things that are necessary for the house. 
+                    Every house neeeds a perfect arrangement with products to make it more beautiful </p>
+                <div class="price">$39.99</div>
+                <button onclick="addToCart('Product 3', 39.99)">Add to Cart</button>
+            </div> 
+
+
+
+
+            
+            </div>
+  </div>
+
+<br>
+        
+
+
+  
+       
+    <h1>
+        <p>With the ever-rising demand for online shopping services,
+            there comes the need of personalizing the user experience and providing users with what they are looking for. 
+        </p></h1>
+           <main>
+            <form action="recommend.php" method="post">
+                <label for="category">Choose a category:</label>
+                <select name="category" id="category" required>
+                    <option value="FASHION  ">FASHION </option>
+                    <option value="HOME APPLIANCES ">HOME APPLIANCES </option>
+                    <option value="JEWELLERY ">JEWELLERY</option>
+                    <option value="DRESSES ">DRESSES</option>
+        <option value="SLIPPERS ">SLIPPERS</option>
+        <option value="GLASSES">GLASSES</option>
+        <option value="LIGHTS">LIGHTS</option>
+        <option value="GADGETS">GADGETS</option>
+        <option value="DECORS">DECORS</option>
+        <option value="WATCHES">WATCHES</option>
+                </select>
+                <br><br>
+                <label for="price">Maximum storage:</label>
+                <input type="number" name="MB " id="price" step="0.01" required>
+                <br><br>
+                <input type="submit" value="Get Recommendations">
+            </form>
+        </main>
+        
+        <header>
+            <h1>My Store</h1>
+            <a href="c:\Users\varun\Downloads\cart.html">View Cart</a>
+        </header>
+        
+        <main>
+            <h2>Product List</h2>
+            <ul>
+                <?php foreach ($products as $product): ?>
+                    <li>
+                        <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+                        <p>Price: $<?php echo number_format($product['price'], 2); ?></p>
+                        <a href="">View Details</a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </main>
+        <div id="products">
+            <div class="product" data-price="199.99" data-name="Product 1">
+                
+                <img src="c:\Users\varun\Downloads\download (43).jpg" alt="Product 1">
+                <p>Style begins with the way when to see and wear them with you. Styles may differ but the value remains the same.</p>
+                <h2>Set of Jewelleries </h2>
+                <br>
+                <div class="gallery">
+                    <img src="c:\Users\varun\Downloads\download (50).jpg" alt="Product 1 Thumbnail 1">
+                    <img src="c:\Users\varun\Downloads\download (49).jpg" alt="Product 1 Thumbnail 2">
+                </div>
+                <p>Elegant Jewels are known to everyone but finding it the way in which you like them should be unique and the way thst you spend the money that you have saved and spent for it should
+                    be worth for buying the jewel
+                </p>
+                <div class="price">$199.99</div>
+                <button onclick="addToCart('Product 1', 199.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="299.99" data-name="Product 2">
+                <img src="c:\Users\varun\Downloads\download (51).jpg" alt="Product 2">
+                <p>The bangles should be weared to make the women's hand a beautiful one. Wearing Bangles gives additional beauty to womens who wear it </p>
+
+                <h2>Bangles </h2>
+                <br>
+                
+                
+                <div class="gallery">
+                    <img src="c:\Users\varun\Downloads\download (48).jpg" alt="Product 2 Thumbnail 1">
+                    <img src="c:\Users\varun\Downloads\download (52).jpg" alt="Product 2 Thumbnail 2">
+                </div>
+                 
+                <p> the elegancy comes when you wear a product with care and the value increases when you wait and think that they are deserved to be brought and saving money to buuy them should 
+                    be worth for saving the money by our hard works </p>
+                
+                <div class="price">$299.99</div>
+                <button onclick="addToCart('Product 2', 299.99)">Add to Cart</button>
+            </div>
+            
+
+<div class="product" data-price="85.16" data-name="Product 3">
+    <img src="c:\Users\varun\Downloads\download (71).jpg" alt="Product 1">
+    <p>Jewelleries makes the person to shine beyond the golden colour by exploring the unique designs hidden inside them.</p>
+    <h2>Jewellery </h2>
+    <br>
+    <div class="gallery">
+        <img src="c:\Users\varun\Downloads\download (73).jpg" alt="Product 1 Thumbnail 1">
+        <img src="c:\Users\varun\Downloads\download (74).jpg" alt="Product 1 Thumbnail 2">
+    </div>
+    <p>"Elevate Your Everyday"<br>
+        "Experience Excellence"<br>
+        "Where Quality Meets Innovation"<br>
+        "Simplicity Meets Sophistication"</p>
+    <div class="price">$85.16</div>
+    <button onclick="addToCart('Product 1', 85.16)">Add to Cart</button>
+</div>
+                
+     
+
+   
+                <p>"Simple Sophistication, Forever in Style"<br>
+                    "Classic Beauty That Never Fades"<br>
+                    "Effortless Charm for the Modern You"<br>
+                    "Refined Pieces for the Refined Soul"</p>
+
+                    <section id="portfolio" class="portfolio">
+                        <div class="container">
+                            <h2>Additional Care </h2>
+                            <div class="project-grid">
+                                <div class="project">
+                                    <img src="c:\Users\varun\Downloads\images (5).jpg" alt="Project 1">
+                                    <h3>Musical Notes..</h3>
+                                    <p> A note can changa everything because the writing leaves the lines a memory to the one who reads it after years
+                                        and months with the one who created that memory.
+                                    </p>
+                                </div>
+                                <div class="project">
+                                    <img src="c:\Users\varun\Downloads\download - 2024-09-04T143630.489.jpg" alt="Project 2">
+                                    <h3>Guitars..</h3>
+                                    <p> Enjoying different types of music according to their taste, 
+                                        choice & preferences in various languages of Musicals rhythms and trendy troves. </p>
+                                </div>
+                               
+                             
+                                <div class="project">
+                                    <img src= "c:\Users\varun\Downloads\download (77).jpg"alt="Project 3">
+                                    
+                                    <h3>Jewelleries..</h3>
+                                    <p> The Jewellery is known to everyone when we wear it with different styles. The jewel is the one which 
+                                        gives the additional beauty to the one who wears it over them.
+                                    </p>
+                                </div>
+                                <div class="project">
+                                    <img src= "c:\Users\varun\Downloads\download (90).jpg"alt="Project 4">
+                                    <h3>Personal Care..</h3>
+                                    <p> The Care for our body is compulsory because diseases can be avoided if we maintain our body at golden condition 
+                                        by applying the cream that suits our health and medical problems that we have. </p>
+                                </div>
+                                <!-- Add more projects as needed -->
+                            </div>
+                        </div>
+                    </section>
+                
+                    <style>
+                        body, h1, h2, h3, p, ul, li, form {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+                        
+                        /* Basic body styles */
+                        body {
+                            font-family: Arial, sans-serif;
+                            line-height: 1.6;
+                            color: goldenrod;
+                            background-color: #f4f4f4;
+                        }
+                        
+                        /* Header styles */
+                        header {
+                            background: green;
+                            color: #fff;
+                            padding: 1rem 0;
+                            text-align: center;
+                        }
+                        
+                        header nav ul {
+                            list-style: none;
+                            padding: 0;
+                        }
+                        
+                        header nav ul li {
+                            display: inline;
+                            margin: 0 15px;
+                        }
+                        
+                        header nav ul li a {
+                            color: wheat;
+                            text-decoration: none;
+                            font-weight: bold;
+                        }
+                        
+                        header .hero {
+                            padding: 2rem;
+                            background: teal;
+                        }
+                        
+                        header .hero h1 {
+                            font-size: 2.5rem;
+                            margin-bottom: 0.5rem;
+                        }
+                        
+                        header .hero p {
+                            font-size: 1.25rem;
+                        }
+                        
+                        /* About section styles */
+                        #about {
+                            padding: 2rem;
+                            background: #fff;
+                            text-align: center;
+                        }
+                        
+                        #about img {
+                            border-radius: 50%;
+                            width: 150px;
+                            height: 150px;
+                            object-fit: cover;
+                            margin-top: 1rem;
+                        }
+                        
+                        /* Portfolio section styles */
+                        #portfolio {
+                            padding: 2rem;
+                            background: #f4f4f4;
+                        }
+                        
+                        #portfolio h2 {
+                            text-align: center;
+                            margin-bottom: 1rem;
+                        }
+                        
+                        .portfolio-item {
+                            background: #fff;
+                            padding: 1rem;
+                            margin: 1rem 0;
+                            border: 1px solid #ddd;
+                            border-radius: 5px;
+                            text-align: center;
+                        }
+                        
+                        .portfolio-item img {
+                            max-width: 100%;
+                            height: auto;
+                            border-radius: 5px;
+                        }
+                        
+                        .portfolio-item h3 {
+                            margin: 0.5rem 0;
+                        }
+                        
+                        /* Contact section styles */
+                        #contact {
+                            padding: 2rem;
+                            background: #fff;
+                        }
+                        
+                        #contact h2 {
+                            text-align: center;
+                            margin-bottom: 1rem;
+                        }
+                        
+                        form {
+                            max-width: 600px;
+                            margin: 0 auto;
+                        }
+                        
+                        form label {
+                            display: block;
+                            margin: 0.5rem 0 0.25rem;
+                        }
+                        
+                        form input, form textarea {
+                            width: 100%;
+                            padding: 0.5rem;
+                            margin-bottom: 1rem;
+                            border: 1px solid #ddd;
+                            border-radius: 5px;
+                        }
+                        
+                        form button {
+                            background:teal;
+                            color: #fff;
+                            padding: 0.75rem;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            font-size: 1rem;
+                        }
+                        
+                        form button:hover {
+                            background: greenyellow;
+                        }
+                        
+                        /* Footer styles */
+                        footer {
+                            background:teal;
+                            color: #fff;
+                            text-align: center;
+                            padding: 1rem;
+                            position: relative;
+                        }
+                        
+                        footer ul {
+                            list-style: none;
+                            padding: 0;
+                        }
+                        
+                        footer ul li {
+                            display: inline;
+                            margin: 0 10px;
+                        }
+                        
+                        footer ul li a {
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                        
+                        footer p {
+                            margin: 0.5rem 0;
+                        }
+                    </style>
+                    <style>
+                        body {
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            background-color: #f0f0f0;
+                            margin: 0;
+                            padding: 0;
+                            color: turquoise;
+                        }
+                        .container {
+                            max-width: 800px;
+                            margin: 20px auto;
+                            background: #fff;
+                            padding: 20px;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                        }
+                        .header {
+                            text-align: center;
+                            border-bottom: 2px solid rebeccapurple;
+                            padding-bottom: 10px;
+                            margin-bottom: 20px;
+                        }
+                        .header h1 {
+                            margin: 0;
+                            font-size: 2.5em;
+                            color: rebeccapurple;
+                        }
+                        .header p {
+                            margin: 5px 0;
+                            font-size: 1.1em;
+                        }
+                        .header a {
+                            color:goldenrod;
+                            text-decoration: none;
+                        }
+                        .header a:hover {
+                            text-decoration: underline;
+                        }
+                        .section {
+                            margin-bottom: 20px;
+                        }
+                        .section h2 {
+                            background: teal;
+                            color: #fff;
+                            padding: 10px;
+                            border-radius: 4px;
+                            font-size: 1.4em;
+                            margin: 0;
+                        }
+                        .section ul {
+                            list-style-type: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        .section ul li {
+                            padding: 10px 0;
+                            border-bottom: 1px solid #ddd;
+                        }
+                        .section ul li:last-child {
+                            border-bottom: none;
+                        }
+                        .section p {
+                            margin: 0;
+                            line-height: 1.6;
+                        }
+                        .contact-info {
+                            text-align: center;
+                            margin-top: 10px;
+                        }
+                        .contact-info a {
+                            color: gray;
+                            text-decoration: none;
+                            font-weight: bold;
+                        }
+                        .contact-info a:hover {
+                            text-decoration: underline;
+                        }
+                    </style><style>
+                    /* Global Styles */
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        color: royalblue;
+                        line-height: 1.6;
+                    }
+                    .container {
+                        width: 90%;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 1rem;
+                    }
+                    header {
+                        background-color: teal;
+                        color: green;
+                        padding: 1rem 0;
+                    }
+                    nav {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    nav h1 {
+                        margin: 0;
+                        font-size: 2rem;
+                    }
+                    nav ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                    }
+                    nav ul li {
+                        margin: 0 1rem;
+                    }
+                    nav ul li a {
+                        color: teal;
+                        text-decoration: none;
+                    }
+                    nav ul li a:hover {
+                        text-decoration: underline;
+                    }
+                    section {
+                        padding: 2rem 0;
+                    }
+                    .about .profile-image {
+                        border-radius: 50%;
+                        width: 150px;
+                        height: 150px;
+                        object-fit: cover;
+                        margin-bottom: 1rem;
+                    }
+                    .skills .skill-list {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    .skills .skill {
+                        flex: 1 1 45%;
+                        margin: 1rem;
+                        padding: 1rem;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                    }
+                    .portfolio .project-grid {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    .portfolio .project {
+                        flex: 1 1 45%;
+                        margin: 1rem;
+                    }
+                    .portfolio img {
+                        width: 100%;
+                        border-radius: 8px;
+                    }
+                    .contact form {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .contact form label {
+                        margin: 0.5rem 0;
+                    }
+                    .contact form input,
+                    .contact form textarea {
+                        padding: 0.5rem;
+                        margin-bottom: 1rem;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                    }
+                    .contact form button {
+                        padding: 0.5rem 1rem;
+                        background-color: pink;
+                        color: #fff;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                    .contact form button:hover {
+                        background-color:pink;
+                    }
+                    footer {
+                        background-color:forestgreen;
+                        color: #fff;
+                        text-align: center;
+                        padding: 1rem;
+                    }
+                    </style>
+                  
+             
+
+
+
+              
+
+                
+
+            <p> With the rising popularity of several music streaming platforms such as Spotify, Youtube Music, and Amazon music, the industry is expected to grow exponentially.<br>
+                "Earrings as Unique as Your Story"<br>
+"Custom Creations for Your Unique Style"<br>
+"Personalized Perfection for a Truly Special Touch"<br>
+"Crafted Just for You, for Moments That Matter"
+            </p>
+
+        
+            
+        </div>
+    </div>
+    <br>
+    <br>
+<header>
+    <main>
+        <h2>Shopping Cart</h2>
+        <?php if (empty($cart)): ?>
+            <p>Your cart is empty.</p>
+        <?php else: ?>
+            <ul>
+                <?php foreach ($cart as $item): ?>
+                    <li>
+                        Product ID: <?php echo htmlspecialchars($item['id']); ?>, Quantity: <?php echo htmlspecialchars($item['quantity']); ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <a href="checkout.php">Checkout</a>
+        <?php endif; ?>
+    </main>
+</header>
+    <main>
+        <h2>Checkout</h2>
+        <p>Total: $<?php echo number_format($total, 2); ?></p>
+        <form action="process_checkout.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <input type="submit" value="Place Order">
+        </form>
+    </main>
+    
+        <script>
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+        const products = [
+    { id: 1, name: 'Product 1', price: 19.99 },
+    { id: 2, name: 'Product 2', price: 29.99 },
+    { id: 3, name: 'Product 3', price: 39.99 }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const productList = document.getElementById('product-list');
+    const cartCount = document.getElementById('cart-count');
+    
+    // Load cart from local storage
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    cartCount.textContent = Object.keys(cart).length;
+
+    // Display products
+    products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Price: $${product.price.toFixed(2)}</p>
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
+        `;
+        productList.appendChild(productDiv);
+    });
+
+    // Function to add product to cart
+    window.addToCart = function(productId) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        if (cart[productId]) {
+            cart[productId]++;
+        } else {
+            cart[productId] = 1;
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        cartCount.textContent = Object.keys(cart).length;
+    };
+});
+document.addEventListener('DOMContentLoaded', () => {
+            const cartItems = document.getElementById('cart-items');
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+            const products = [
+                { id: 1, name: 'Product 1', price: 19.99 },
+                { id: 2, name: 'Product 2', price: 29.99 },
+                { id: 3, name: 'Product 3', price: 39.99 }
+            ];
+
+            let total = 0;
+
+            for (const [id, quantity] of Object.entries(cart)) {
+                const product = products.find(p => p.id == id);
+                if (product) {
+                    total += product.price * quantity;
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'product';
+                    itemDiv.innerHTML = `
+                        <h3>${product.name}</h3>
+                        <p>Price: $${product.price.toFixed(2)}</p>
+                        <p>Quantity: ${quantity}</p>
+                    `;
+                    cartItems.appendChild(itemDiv);
+                }
+            }const totalDiv = document.createElement('div');
+            totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+            cartItems.appendChild(totalDiv);
+        });const products = [
+    { id: 1, name: 'Product 1', price: 19.99 },
+    { id: 2, name: 'Product 2', price: 29.99 },
+    { id: 3, name: 'Product 3', price: 39.99 }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const productList = document.getElementById('product-list');
+    const cartLink = document.getElementById('cart-link');
+    const cartCount = document.getElementById('cart-count');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    // Load cart from session storage
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || {};
+    cartCount.textContent = Object.keys(cart).length;
+
+    // Display products
+    if (productList) {
+        products.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product';
+            productDiv.innerHTML = `
+                <h3>${product.name}</h3>
+                <p>Price: $${product.price.toFixed(2)}</p>
+                <button onclick="addToCart(${product.id})">Add to Cart</button>
+            `;
+            productList.appendChild(productDiv);
+        });
+    }
+
+    // Display cart items
+    if (cartItems) {
+        let total = 0;
+        for (const [id, quantity] of Object.entries(cart)) {
+            const product = products.find(p => p.id == id);
+            if (product) {
+                total += product.price * quantity;
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'product';
+                itemDiv.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p>Price: $${product.price.toFixed(2)}</p>
+                    <p>Quantity: ${quantity}</p>
+                `;
+                cartItems.appendChild(itemDiv);
+            }
+        }
+        cartTotal.textContent = total.toFixed(2);
+    }
+
+    // Add to cart function
+    window.addToCart = function(productId) {
+        const cart = JSON.parse(sessionStorage.getItem('cart')) || {};
+        if (cart[productId]) {
+            cart[productId]++;
+        } else {
+            cart[productId] = 1;
+        }
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        cartCount.textContent = Object.keys(cart).length;
+    };
+
+    // Checkout function
+    window.checkout = function() {
+        alert('Checkout functionality is not implemented in this demo.');
+    };
+});
+
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+    
+       
+    
+    
+
+    
+    
+    
+    
+    
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Email us at: <a href="mailto:varunapriyasj1004@gmail.com">varunapriyasj1004@gmail.com</a></p>
+        <p>Call us: (123) 456-7890</p>
+    </div>
+</section>
+       
+
+   
+
+
+    <footer>
+        <p>&copy; 2024 Sparkle Store</p>
+    </footer>
+
+    <script>
+        function addToCart(productName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price}`;
+                cartItems.appendChild(li);
+            });
+        }
+
+        function checkout() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Checking out with items: ' + cart.map(item => `${item.name} ($${item.price})`).join(', '));
+            localStorage.removeItem('cart');
+            updateCartDisplay();
+        }
+
+        function filterProducts() {
+            let searchValue = document.getElementById('search-bar').value.toLowerCase();
+            let filterValue = document.getElementById('filter').value;
+            let products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                let name = product.getAttribute('data-name').toLowerCase();
+                let price = parseFloat(product.getAttribute('data-price'));
+                let shouldShow = true;
+
+                if (searchValue && !name.includes(searchValue)) {
+                    shouldShow = false;
+                }
+
+                if (filterValue && price > parseFloat(filterValue)) {
+                    shouldShow = false;
+                }
+
+                product.style.display = shouldShow ? 'block' : 'none';
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartDisplay();
+            filterProducts(); // Initialize filter
+        });
+    </script>
+</body>
+</html>
